@@ -5,7 +5,7 @@ import ButtonContainer from "./components/ButtonContainer.vue";
 
 const app = createApp(App)
 
+//global components
 app.component('contact-us', ContactUs);
-app.component("button-counter", ButtonContainer)
 
 app.mount('#app');
