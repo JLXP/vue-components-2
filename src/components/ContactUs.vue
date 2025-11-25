@@ -4,15 +4,8 @@
     <p>Please send and email to {{ email }}</p>
   </div>
 </template>
-<script>
+<script setup>
 import { ref } from "vue";
-export default {
-  setup() {
-    const email = ref("hello@dotnetmastery.com");
+const email = ref("hello@dotnetmastery.com");
 
-    return {
-      email,
-    };
-  },
-};
 </script>
