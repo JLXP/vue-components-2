@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>{{ message }}</div>
-    <Contact name="Bhrugen" phone="123123123" :ownername="contactOwner"></Contact>
+    <Contact name="Bhrugen" :phone="123123123" :ownername="contactOwner"></Contact>
     <!--local component-->
     <!-- <ButtonContainer></ButtonContainer> -->
   </div>
