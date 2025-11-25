@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <div>{{ message }}</div>
-    <ContactUs></ContactUs>
+    <Contact name="Bhrugen" phone="123123123"></Contact>
     <!--local component-->
-    <ButtonContainer></ButtonContainer>
+    <!-- <ButtonContainer></ButtonContainer> -->
   </div>
 </template>
 
 <script setup>
-import ContactUs from "./components/ContactUs.vue";
+import Contact from "./components/Contact.vue";
 import ButtonContainer from "./components/ButtonContainer.vue";
 const message = "Hello vue";
 </script>
