@@ -8,7 +8,7 @@
       </div>
       <div class="col-3">
         <button
-          @click="toggleFavorite"
+          @click="emit('update-favorite', { isFavorite: props.isFavorite, name: props.name });"
           :class="[isFavorite ? 'btn btn-warning' : 'btn btn-success']"
         >
           {{ isFavorite ? "Remove from" : "Add to" }}
