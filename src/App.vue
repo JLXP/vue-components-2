@@ -1,18 +1,18 @@
 <template>
   <div class="container">
     <div>{{ message }}</div>
-    Contact Owner Name : <input v-model="ownerName"/>
+    Contact Owner Name : <input v-model="ownerName" />
     <div class="row">
       <div class="col-12" v-for="contact in contacts" :key="contact.name">
-          <Contact
-            :name="contact.name"
-            :phone="contact.phone"
-            :ownername="contact.ownerName"
-            :email="contact.email"
-            :isFavorite="contact.isFavorite"
-            @update-favorite="contact.isFavorite = !contact.isFavorite"
-          >
-          </Contact>
+        <Contact
+          :name="contact.name"
+          :phone="contact.phone"
+          :ownername="contact.ownerName"
+          :email="contact.email"
+          :isFavorite="contact.isFavorite"
+          @update-favorite="contact.isFavorite = onUpdateFavorite($event)"
+        >
+        </Contact>
       </div>
     </div>
     <!--local component-->
@@ -31,25 +31,27 @@ const contacts = reactive([
     name: "Bruhgen",
     phone: 123131231,
     ownerName: ownerName,
-    isFavorite: false
+    isFavorite: false,
   },
   {
-    name:"Bella",
+    name: "Bella",
     phone: 5554443333,
     ownerName: ownerName,
     isFavorite: true,
   },
   {
-    name:"Ben",
+    name: "Ben",
     phone: 33344455543,
     ownerName: "",
-    email:"ben@dotnetmastery.com",
-    isFavorite:false,
-  }
-
+    email: "ben@dotnetmastery.com",
+    isFavorite: false,
+  },
 ]);
 
-
+function onUpdateFavorite(oldValuesFromChildComponent) {
+  console.log(oldValuesFromChildComponent);
+  return !oldValuesFromChildComponent[0];
+}
 </script>
 
 <style></style>
