@@ -15,7 +15,7 @@
           <input
             type="text"
             class="form-control"
-            v-model="contact.name"
+            v-model="contact.email"
             placeholder="Email"
           />
         </div>
@@ -23,16 +23,21 @@
           <input
             type="text"
             class="form-control"
-            v-model="contact.name"
+            v-model.number="contact.phone"
             placeholder="Phone"
           />
+        </div>
+        <div class="col-6 offset-3 p-2">
+            <button type="submit" class="btn btn-secondary w-100">
+                Add Contact
+            </button>
         </div>
       </div>
     </form>
   </div>
 </template>
 
-<script>
+<script setup>
 import { reactive } from "vue";
 
 const contact = reactive({
@@ -46,6 +51,5 @@ function addContact() {
   contact.email = "";
   contact.name = "";
   contact.phone = "";
-}
-s;
+};
 </script>
