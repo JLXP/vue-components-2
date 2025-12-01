@@ -6,7 +6,7 @@
       </div>
       <br/>
       <br/>
-      <AddContact></AddContact>
+      <AddContact @add-contact="onAddContact"></AddContact>
       <div class="row">
         <div class="col-12" v-for="contact in contacts" :key="contact.name">
           <Contact
@@ -57,9 +57,9 @@ const contacts = reactive([
 ]);
 
 function onAddContact(contact){
-  constact.ownerName = ownerName.value;
+  contact.ownerName = ownerName.value;
   contact.isFavorite = false;
-  contact.push(contact);
+  contacts.push(contact);
 }
 
 
