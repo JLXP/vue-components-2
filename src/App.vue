@@ -22,6 +22,7 @@
           </Contact>
         </div>
       </div>
+      <LuckyNumber></LuckyNumber>
       <!--local component-->
       <!-- <ButtonContainer></ButtonContainer> -->
     </div>
@@ -32,6 +33,7 @@
 import { reactive, ref } from "vue";
 import Contact from "./components/Contact.vue";
 import AddContact from "./components/AddContact.vue";
+import LuckyNumber from "./components/LuckyNumber.vue";
 //import ButtonContainer from "./components/ButtonContainer.vue";
 const ownerName = ref("dotnetmastery");
 const contacts = reactive([
