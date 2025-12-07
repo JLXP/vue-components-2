@@ -28,9 +28,9 @@
           />
         </div>
         <div class="col-6 offset-3 p-2">
-            <button type="submit" class="btn btn-secondary w-100">
-                Add Contact
-            </button>
+          <button type="submit" class="btn btn-secondary w-100">
+            Add Contact
+          </button>
         </div>
       </div>
     </form>
@@ -38,9 +38,11 @@
 </template>
 
 <script setup>
-import { reactive, defineEmits } from "vue";
+import { reactive, defineProps } from "vue";
 
-const emit = defineEmits(["add-contact"]);
+//const emit = defineEmits(["add-contact"]);
+
+const props = defineProps({ onAddContact: Function });
 
 const contact = reactive({
   name: "",
@@ -49,14 +51,14 @@ const contact = reactive({
 });
 
 function addContact() {
-  emit("add-contact",{
+  props.onAddContact({
     name: contact.name,
-  phone: contact.phone,
-  email: contact.email,
-  })
+    phone: contact.phone,
+    email: contact.email,
+  });
   console.log(contact);
   contact.email = "";
   contact.name = "";
   contact.phone = "";
-};
+}
 </script>
