@@ -22,7 +22,7 @@
           </Contact>
         </div>
       </div>
-      <LuckyNumber></LuckyNumber>
+      <!--<LuckyNumber :maxNumber="10"></LuckyNumber>-->
       <!--local component-->
       <!-- <ButtonContainer></ButtonContainer> -->
     </div>

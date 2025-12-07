@@ -9,10 +9,13 @@
       <div class="col-3">
         <button
           @click="emit('update-favorite', { isFavorite: props.isFavorite, name: props.name });"
-          :class="[isFavorite ? 'btn btn-warning' : 'btn btn-success']"
+          :class="[isFavorite ? 'btn btn-warning form-control' : 'btn btn-success form-control']"
         >
           {{ isFavorite ? "Remove from" : "Add to" }}
         </button>
+      </div>
+      <div class="col-3">
+        <LuckyNumber :maxNumber="10"></LuckyNumber>
       </div>
     </div>
     <span class="float-end small" v-if="ownername != ''">
@@ -21,6 +24,8 @@
   </div>
 </template>
 <script setup>
+import LuckyNumber from './LuckyNumber.vue';
+
 //import { ref, defineProps } from "vue";
 //const email = ref("hello@dotnetmastery.com");
 const props = defineProps({
