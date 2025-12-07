@@ -5,7 +5,7 @@
       <div class="row text-white p-2 mb-2">
         <div class="col-6">Owner Name: <input v-model="ownerName" /></div>
         <div class="col-6 text-end">
-          Max Lucky Number : <input v-model.number="maxNumber"/>
+          Max Lucky Number : <input v-model.number="maxNumber" />
         </div>
       </div>
       <br />
@@ -19,7 +19,6 @@
             :ownername="contact.ownerName"
             :email="contact.email"
             :isFavorite="contact.isFavorite"
-            :maxLuckyNumber="maxNumber"
             @update-favorite="
               contact.isFavorite = onUpdateFavorite($event, contact.phone)
             "
@@ -35,13 +34,14 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, ref, provide } from "vue";
 import Contact from "./components/Contact.vue";
 import AddContact from "./components/AddContact.vue";
 import LuckyNumber from "./components/LuckyNumber.vue";
 //import ButtonContainer from "./components/ButtonContainer.vue";
 const maxNumber = ref(100);
 const ownerName = ref("dotnetmastery");
+provide("maxLuckyNumber", maxNumber);
 const contacts = reactive([
   {
     name: "Bruhgen",
