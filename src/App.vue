@@ -9,7 +9,9 @@
       <button class="btn btn-primary text-black m-2" @click="newVersion=true">Lucky Number V2</button>
       <br/>
       <br/>
-      <component :is="currentComponent" />
+      <keep-alive>
+        <component :is="currentComponent" />
+      </keep-alive>   
     </div>
   </div>
 </template>
