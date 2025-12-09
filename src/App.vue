@@ -1,4 +1,5 @@
 <template>
+  <h1>Hello vue</h1>
   <LuckyNumberParentComponent>
     <template v-slot:default>
       <p>We have two version for picking lucky number</p>
@@ -25,3 +26,5 @@ function showMessage() {
   message.value = "We will learn how to use slots";
 }
 </script>
+
+
