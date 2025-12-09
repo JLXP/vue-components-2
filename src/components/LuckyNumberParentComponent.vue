@@ -2,7 +2,7 @@
   <div class="bg-black text pt-3" :style="{ height: '100vh' }">
     <h1 class="text-center text-success">Learn Slots</h1>
     <div class="container text-center bg-white">
-        <slot></slot>
+    <slot></slot>
       <button class="btn btn-primary text-black m-2" @click="newVersion = !newVersion">Toggle Component</button>
       <br/>
 
