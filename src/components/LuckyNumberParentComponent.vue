@@ -9,6 +9,7 @@
       <button class="btn btn-primary text-black m-2" @click="newVersion=false">Lucky Number V1</button>
       <button class="btn btn-primary text-black m-2" @click="newVersion=true">Lucky Number V2</button>
       <br/>
+      <slot name="learnSlot"></slot>
       <br/>
       <keep-alive :include="['LuckyNumber','LuckyNumber2']">
         <component :is="currentComponent" class="border" />
