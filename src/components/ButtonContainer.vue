@@ -1,6 +1,12 @@
 <template>
-  Counter
+  <button @click="increment">++</button>
+  <span>{{ count }}</span>
+  <button @click="decrement">--</button>
+  
 </template>
-<script setup>
 
+<script setup>
+import { useCounter } from "./composibles/useCounter";
+
+const { count, increment, decrement } = useCounter();
 </script>
